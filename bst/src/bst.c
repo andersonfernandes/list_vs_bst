@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "../inc/bst.h"
 
-typedef struct binarytree BinaryTree;
 struct binarytree{
 
 	int item;
@@ -61,7 +60,7 @@ void print_bst(BinaryTree* bt){
 
 	if(bt == NULL) return;
  	
-	printf("%d", bt->item);
+	printf("%d ", bt->item);
 
  	print_bst(bt->left);
  	print_bst(bt->right);
