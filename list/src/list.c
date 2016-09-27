@@ -14,3 +14,10 @@ Node* create_list() {
 int is_empty(Node *first) {
   return (first == NULL);
 }
+
+Node* insert_node(Node *first, int item){
+  Node *newNode = (Node*) malloc(sizeof(Node));
+    newNode->item = item;
+    newNode->next = first;
+    return newNode;
+}
