@@ -54,3 +54,10 @@ Node* search_node(Node *first, int item){
     }
     return NULL;
 }
+
+void print_list(Node *first){
+  Node *p;
+    for (p = first; p != NULL ; p = p->next) {
+        printf("%d\n",p->item);
+    }
+}
