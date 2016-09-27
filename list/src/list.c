@@ -21,3 +21,26 @@ Node* insert_node(Node *first, int item){
     newNode->next = first;
     return newNode;
 }
+
+Node* remove_node(Node *first, int item){
+    Node *previous = NULL;
+    Node *current = first;
+
+    while (current != NULL && current->item != item) {
+        previous = current;
+        current = current->next;
+    }
+
+    if (current == NULL) {
+        return NULL;
+    }
+
+    if(previous == NULL) {
+        first = current->next;
+    } else {
+        previous->next = current->next;
+    }
+
+    free(current);
+    return first;
+}
