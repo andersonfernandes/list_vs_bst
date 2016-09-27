@@ -44,3 +44,13 @@ Node* remove_node(Node *first, int item){
     free(current);
     return first;
 }
+
+Node* search_node(Node *first, int item){
+  Node *p;
+    for (p = first; p != NULL ; p = p->next) {
+        if (p->item == item) {
+            return p;
+        }
+    }
+    return NULL;
+}
