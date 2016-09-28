@@ -69,10 +69,13 @@ void print_bst(BinaryTree* bt){
 
 }
 
-BinaryTree* search_bst(BinaryTree* bt, int item){
-  	
-  	if(bt == NULL) return NULL;
-	if(bt->item == item) return bt;
+int search_bst(BinaryTree* bt, int item){
+  	int i = 0;
+  	if(bt == NULL) return 0;
+	if(bt->item == item){
+		++i;
+		return i;
+	} 
   	else if(item < bt->item) search_bst(bt->left, item);
   	else if(item > bt->item) search_bst(bt->right, item);
  

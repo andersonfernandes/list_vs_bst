@@ -45,14 +45,17 @@ Node* remove_node(Node *first, int item){
     return first;
 }
 
-Node* search_node(Node *first, int item){
+//retorna a quantidade de iterações feitas para chegar a determinado elemento
+int search_node(Node *first, int item){
   Node *p;
+  int i = 0;
     for (p = first; p != NULL ; p = p->next) {
+        ++i;
         if (p->item == item) {
-            return p;
+            return i;
         }
     }
-    return NULL;
+    return i;
 }
 
 void print_list(Node *first){

@@ -9,7 +9,7 @@
 
   void free_bst(BinaryTree* bt);
   
-  BinaryTree* search_bst(BinaryTree* bt, int item);
+  int search_bst(BinaryTree* bt, int item);
   
   BinaryTree* remove_bst_node(BinaryTree* bt, int item);
 
