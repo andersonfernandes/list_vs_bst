@@ -11,7 +11,7 @@
 
   int is_empty(Node *first);
 
-  int search_node(Node *first, int item);
+  Node* search_node(Node *first, int item);
 
   void print_list(Node *first);
 

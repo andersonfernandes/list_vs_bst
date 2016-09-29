@@ -16,51 +16,48 @@ int is_empty(Node *first) {
 }
 
 Node* insert_node(Node *first, int item){
-  Node *newNode = (Node*) malloc(sizeof(Node));
-    newNode->item = item;
-    newNode->next = first;
-    return newNode;
+  Node *new_node = (Node*) malloc(sizeof(Node));
+  new_node->item = item;
+  new_node->next_node = first;
+  return new_node;
 }
 
 Node* remove_node(Node *first, int item){
-    Node *previous = NULL;
-    Node *current = first;
+  Node *previous = NULL;
+  Node *current = first;
 
-    while (current != NULL && current->item != item) {
-        previous = current;
-        current = current->next;
-    }
+  while (current != NULL && current->item != item) {
+    previous = current;
+    current = current->next_node;
+  }
 
-    if (current == NULL) {
-        return NULL;
-    }
+  if (current == NULL) {
+    return NULL;
+  }
 
-    if(previous == NULL) {
-        first = current->next;
-    } else {
-        previous->next = current->next;
-    }
+  if(previous == NULL) {
+    first = current->next_node;
+  } else {
+    previous->next_node = current->next_node;
+  }
 
-    free(current);
-    return first;
+  free(current);
+  return first;
 }
 
-//retorna a quantidade de iterações feitas para chegar a determinado elemento
-int search_node(Node *first, int item){
+Node *search_node(Node *first, int item){
   Node *p;
-  int i = 0;
-    for (p = first; p != NULL ; p = p->next) {
-        ++i;
-        if (p->item == item) {
-            return i;
-        }
-    }
-    return i;
+
+  for (p = first; p != NULL ; p = p->next_node)
+    if(p->item == item) return p;
+
+  return NULL;
 }
 
 void print_list(Node *first){
   Node *p;
-    for (p = first; p != NULL ; p = p->next) {
-        printf("%d\n",p->item);
-    }
+
+  for (p = first; p != NULL ; p = p->next_node) {
+    printf("%d\n",p->item);
+  }
 }
