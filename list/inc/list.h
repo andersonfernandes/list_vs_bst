@@ -13,6 +13,8 @@
 
   Node* search_node(Node *first, int item);
 
+  int compare_search(Node *first, int item);
+
   void print_list(Node *first);
 
 #endif

@@ -1,7 +1,17 @@
 # Executables
 main
 main.exe
+teste
+teste.exe
+
 
 # Generated files
 list_vs_bst.csv
 Rplots.pdf
+
+
+#VS trash
+.vscode/.BROWSE.VC.DB
+.vscode/.BROWSE.VC.DB-shm
+.vscode/.BROWSE.VC.DB-wal
+
