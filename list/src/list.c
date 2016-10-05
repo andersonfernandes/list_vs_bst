@@ -50,16 +50,18 @@ Node* remove_node(Node *first, int item){
 
 Node *search_node(Node *first, int item){
   Node *p;
-  for (p = first; p != NULL ; p = p->next_node)
+  for (p = first; p != NULL ; p = p->next_node){
+    ++contador;
     if(p->item == item){
-      ++contador;
       return p;
     } 
+  }
     return NULL;
 }
 
 //retorna o numero de iterações de uma busca a um elemento especifico
 int compare_search(Node *first, int item){
+  contador = 0;
   Node *p = search_node(first, item);
   free(p);
   return contador;
