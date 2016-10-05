@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "../inc/bst.h"
 
+//Contador global
+int contador = 0;
+
 struct binarytree{
 	int item;
 	BinaryTree* left;
@@ -57,25 +60,21 @@ void free_bst(BinaryTree* bt){
  	return;
 }
 
-void print_bst(BinaryTree* bt){
-
-	if(bt == NULL) return;
-
-	printf("%d ", bt->item);
-
- 	print_bst(bt->left);
- 	print_bst(bt->right);
-
- 	return;
-
-}
-
 BinaryTree* search_bst(BinaryTree* bt, int item){
+	++contador;
 	if(bt == NULL) return NULL;
 
-  if(bt->item == item) return bt;
-  else if(item < bt->item) search_bst(bt->left, item);
-  else if(item > bt->item) search_bst(bt->right, item);
+ 	if(bt->item == item) return bt;
+  	else if(item < bt->item) search_bst(bt->left, item);
+  	else if(item > bt->item) search_bst(bt->right, item);
+}
+
+int compare_search_bst(BinaryTree* bt, int item){
+	
+	contador = 0;
+	search(bt, item);
+	return contador;
+
 }
 
 BinaryTree* remove_bst_node(BinaryTree* bt, int item){
@@ -97,4 +96,17 @@ BinaryTree* remove_bst_node(BinaryTree* bt, int item){
 
     free(last);
 	}
+}
+
+void print_bst(BinaryTree* bt){
+
+	if(bt == NULL) return;
+
+	printf("%d ", bt->item);
+
+ 	print_bst(bt->left);
+ 	print_bst(bt->right);
+
+ 	return;
+
 }

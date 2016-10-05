@@ -13,6 +13,8 @@
 
   BinaryTree* search_bst(BinaryTree* bt, int item);
 
+  int compare_search_bst(BinaryTree* bt, int item);
+
   BinaryTree* remove_bst_node(BinaryTree* bt, int item);
 
   void print_bst(BinaryTree* bt);
