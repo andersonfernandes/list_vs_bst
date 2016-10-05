@@ -72,7 +72,7 @@ BinaryTree* search_bst(BinaryTree* bt, int item){
 int compare_search_bst(BinaryTree* bt, int item){
 	
 	contador = 0;
-	search(bt, item);
+	search_bst(bt, item);
 	return contador;
 
 }
