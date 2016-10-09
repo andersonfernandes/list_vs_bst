@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "../inc/list.h"
 
-//Contador global
-int contador = 0;
+//counter_list global
+int counter_list = 0;
 
 struct node {
   int item;
@@ -51,20 +51,20 @@ Node* remove_node(Node *first, int item){
 Node *search_node(Node *first, int item){
   Node *p;
   for (p = first; p != NULL ; p = p->next_node){
-    ++contador;
+    ++counter_list;
     if(p->item == item){
       return p;
-    } 
+    }
   }
     return NULL;
 }
 
 //retorna o numero de iterações de uma busca a um elemento especifico
 int compare_search(Node *first, int item){
-  contador = 0;
+  counter_list = 0;
   Node *p = search_node(first, item);
   free(p);
-  return contador;
+  return counter_list;
 }
 
 void print_list(Node *first){

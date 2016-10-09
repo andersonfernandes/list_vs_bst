@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "../inc/bst.h"
 
-//Contador global
-int contador = 0;
+//counter_bst global
+int counter_bst = 0;
 
 struct binarytree{
 	int item;
@@ -61,7 +61,7 @@ void free_bst(BinaryTree* bt){
 }
 
 BinaryTree* search_bst(BinaryTree* bt, int item){
-	++contador;
+	++counter_bst;
 	if(bt == NULL) return NULL;
 
  	if(bt->item == item) return bt;
@@ -70,10 +70,10 @@ BinaryTree* search_bst(BinaryTree* bt, int item){
 }
 
 int compare_search_bst(BinaryTree* bt, int item){
-	
-	contador = 0;
+
+	counter_bst = 0;
 	search_bst(bt, item);
-	return contador;
+	return counter_bst;
 
 }
 

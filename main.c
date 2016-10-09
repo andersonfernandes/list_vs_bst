@@ -36,30 +36,23 @@ int main() {
   BinaryTree *bst = create_empty_bst();
   Node *list = create_list();
 
-  printf(">> Armazenando dados na estrutura ...\n\n");
   srand ( time(NULL) );
   for(i = 0; i < 10000; ++i) {
-    g = rand()%12000;
+    g = rand()%10000-1;
 
     list = insert_node(list, g);
     bst = add_branch(bst, g);
   }
 
-  printf(">> Realizando buscas ...\n\n");
   for(i = 0; i < SIZE; ++i) {
-    g = rand()%12000;
+    g = rand()%10000-1;
 
     searches[i] = g;
     comp_list[i] = compare_search(list, g);
     comp_bst[i] = i;
   }
 
-  printf(">> Gerando arquivo .csv\n");
   generate_csv_file(searches, comp_list, comp_bst);
-  printf(">> Arquivo gerado com sucesso em /list_vs_bst.csv\n\n");
-
-  printf("Execute 'make plot_graph' para gerar o gráfico com os dados coletados.\n");
-
 
   // TODO free structures
 
