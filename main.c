@@ -48,8 +48,8 @@ int main() {
     g = rand()%10000-1;
 
     searches[i] = g;
-    comp_list[i] = compare_search(list, g);
-    comp_bst[i] = i;
+    comp_list[i] = compare_search(list, i);
+    comp_bst[i] = compare_search_bst(bst, i);
   }
 
   generate_csv_file(searches, comp_list, comp_bst);
